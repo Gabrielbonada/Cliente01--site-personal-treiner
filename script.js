@@ -288,7 +288,7 @@ function showToast(msg) {
 
   // Número configurável — altere aqui
   const WHATSAPP_NUMBER = '555192147753';
-  const WHATSAPP_MSG    = encodeURIComponent('Olá, Jeferson! Vi seu site e quero saber mais sobre o treinamento.');
+  const WHATSAPP_MSG    = encodeURIComponent('Olá, Jeferson! Vi seu site e quero saber mais sobre os teus serviços.');
   btn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`;
 
   // Aparecer após scroll
