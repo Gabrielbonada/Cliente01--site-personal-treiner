@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeferson Rafael — Personal Trainer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       CURSOR PERSONALIZADO
+  ============================================================ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- ============================================================
+       NAVEGAÇÃO
+  ============================================================ -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" "nav-logo"><span></span></a>
+      <ul class="nav-links"> <img style=" width: 15%;" src="assets/logo-removebg-preview.png" alt="">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#cupons">Cupons</a></li>
+        <li><a href="#transformacoes">Transformações</a></li>
+
+        <li><a href="#contato" class="nav-cta">Começar Agora</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#sobre" class="mobile-link">Sobre</a></li>
+      <li><a href="#cupons" class="mobile-link">Cupons</a></li>
+      <li><a href="#transformacoes" class="mobile-link">Transformações</a></li>
+
+      <li><a href="#contato" class="mobile-link">Contato</a></li>
+    </ul>
+  </div>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section class="hero" id="home">
+    <!-- Fundo com grid e gradiente -->
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-glow hero-glow-2"></div>
+    </div>
+
+
+    <div class="hero-content">
+      <!-- Badge -->
+
+
+      <!-- Nome principal -->
+      <h1 class="hero-name reveal-hero" style="--delay: 0.2s">
+        JEFERSON<br>
+        <span>RAFAEL</span>
+      </h1>
+
+      <!-- Carrossel de frases -->
+      <div class="hero-carousel reveal-hero" style="--delay: 0.4s">
+        <div class="carousel-track">
+          <p class="carousel-item active">Transforme seu corpo.</p>
+          <p class="carousel-item">Treinos personalizados.</p>
+          <p class="carousel-item">Resultados reais.</p>
+          <p class="carousel-item">Seu melhor shape começa agora.</p>
+          <p class="carousel-item">Evolução estratégica.</p>
+          <p class="carousel-item">Ciência em cada treino.</p>
+        </div>
+        <!-- Barra de progresso -->
+        <div class="carousel-progress">
+          <div class="carousel-progress-bar" id="progressBar"></div>
+        </div>
+        <!-- Indicadores -->
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+
+      <!-- Sub -->
+      <p class="hero-sub reveal-hero" style="--delay: 0.6s">
+        Método científico. Entrega total. Resultado inevitável.
+      </p>
+
+      <!-- CTAs -->
+      <div class="hero-ctas reveal-hero" style="--delay: 0.8s">
+        <a href="#contato" class="btn btn-primary">
+          <span>Iniciar Minha Evolução</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#sobre" class="btn btn-outline">Conhecer o Método</a>
+      </div>
+
+      <!-- Stats rápidas -->
+      <div class="hero-stats reveal-hero" style="--delay: 1s">
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <!-- ============================================================
+       CUPONS DE PARCEIROS
+  ============================================================ -->
+  <section class="cupons" id="cupons">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Descontos <em>exclusivos</em><br>para meus alunos</h2>
+        <p class="section-sub">Parceiros selecionados com os melhores produtos do mercado fitness.</p>
+      </div>
+
+      <div class="cupons-grid">
+        <!-- Cupom 1 -->
+        <div class="cupon-card reveal" style="--delay: 0s">
+          <div class="cupon-header">
+            <div class="cupon-logo">
+              <span class="cupon-logo-text">Brutus</span>
+              <span class="cupon-logo-sub">suplementos</span>
+            </div>
+            <div class="cupon-discount">10%<br><span>OFF</span></div>
+          </div>
+          <div class="cupon-body">
+            <p class="cupon-desc">Suplementação de alta performance para potencializar seus resultados. Proteínas,
+              pré-treinos e muito mais.</p>
+            <div class="cupon-code-wrap">
+              <span class="cupon-label">Código do cupom</span>
+              <div class="cupon-code" data-code="JEFERSONRAFAEL">
+                <span>JEFERSONRAFAEL</span>
+                <button class="copy-btn" onclick="copyCupom(this, 'JEFERSONRAFAEL')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" />
+                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                  </svg>
+                  <span>Copiar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <a href="https://www.instagram.com/brutussuplementosgravatai?igsh=MTNnangzZzU3bWg4OA%3D%3D" target="_blank" class="cupon-btn">
+            Ir para o Instagram da loja
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+        </div>
+
+
+        
+        <div class="cupon-card reveal" style="--delay: 0s">
+          <div class="cupon-header">
+            <div class="cupon-logo">
+              <span class="cupon-logo-text">Gymcore</span>
+              <span class="cupon-logo-sub">Store</span>
+            </div>
+            <div class="cupon-discount">10%<br><span>OFF</span></div>
+          </div>
+          <div class="cupon-body">
+            <p class="cupon-desc">Roupas fitness de alta qualidade para elevar seu desempenho e estilo. Conforto, atitude e muito mais para seus treinos.</p>
+            <div class="cupon-code-wrap">
+              <span class="cupon-label">Código do cupom</span>
+              <div class="cupon-code" data-code="JEFERSONRAFAEL">
+                <span>JEFERSONRAFAEL</span>
+                <button class="copy-btn" onclick="copyCupom(this, 'JEFERSONRAFAEL')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" />
+                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                  </svg>
+                  <span>Copiar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <a href="https://usegymcore.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnn-hnOUvnb7FziizKl9_zmQYGSzq_stdMMbAXUlOJdGXFiv03G4u8jGub8pQ_aem_jzXNYrjCcxLHC8Hd7Uw-Ew" target="_blank"
+            class="cupon-btn">
+            Ir para a loja
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Cupom 2 -->
+        <div class="cupon-card featured reveal" style="--delay: 0.15s">
+
+          <div class="cupon-header">
+            <div class="cupon-logo">
+              <span class="cupon-logo-text">Caroline Rossetti </span>
+              <span class="cupon-logo-sub">Nutricionista indicada</span>
+            </div>
+            <div class="cupon-discount">10%<br><span>OFF</span></div>
+          </div>
+          <div class="cupon-body">
+            <p class="cupon-desc">Nutricionista pós-graduada em Nutrição Funcional, dedicada a promover saúde, bem-estar e qualidade de vida através de um acompanhamento humanizado, estratégico e totalmente personalizado para cada paciente.
+</p>
+            <div class="cupon-code-wrap">
+              <span class="cupon-label">Código do cupom</span>
+              <div class="cupon-code" data-code="JEFERSONRAFAEL">
+                <span>JEFERSONRAFAEL</span>
+                <button class="copy-btn" onclick="copyCupom(this, 'JEFERSONRAFAEL')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" />
+                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                  </svg>
+                  <span>Copiar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <a href="https://www.instagram.com/nutricarolrossetti?igsh=MXB1YzZ4cjlmeXVsbA%3D%3D" target="_blank" class="cupon-btn featured-btn">
+            Ir para o instagram do profissional
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Cupom 3 -->
+        <div class="cupon-card reveal" style="--delay: 0.3s">
+          <div class="cupon-header">
+            <div class="cupon-logo">
+              <span class="cupon-logo-text">Marcelo Henrique</span>
+              <span class="cupon-logo-sub">psicólogo indicado</span>
+            </div>
+            <div class="cupon-discount">10%<br><span>OFF</span></div>
+          </div>
+          <div class="cupon-body">
+            <p class="cupon-desc">Psicólogo dedicado e apaixonado por ajudar pessoas a encontrarem equilíbrio, autoconhecimento e qualidade de vida, oferecendo um atendimento humano, acolhedor e focado no seu desenvolvimento pessoal.</p>
+            <div class="cupon-code-wrap">
+              <span class="cupon-label">Código do cupom</span>
+              <div class="cupon-code" data-code="JEFERSONRAFAEL">
+                <span>JEFERSONRAFAEL</span>
+                <button class="copy-btn" onclick="copyCupom(this, 'JEFERSONRAFAEL')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" />
+                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                  </svg>
+                  <span>Copiar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <a href="https://www.instagram.com/marcelohpsico?igsh=MWU3ajE2dGEyMjgyZA%3D%3D" target="_blank" class="cupon-btn">
+            Ir para o instagram do profissional
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SOBRE MIM
+  ============================================================ -->
+  <section class="sobre" id="sobre">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Não nasci <em>pronto.</em><br>Me fiz.</h2>
+        
+      </div>
+
+      <div class="sobre-grid">
+        <!-- Foto -->
+        <div class="sobre-photo reveal">
+          <div class="photo-frame">
+            <div class="photo-placeholder">
+              
+              <img src="jef1.jpeg" alt="">
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- Texto -->
+        <div class="sobre-text reveal" style="--delay: 0.2s">
+          <p class="sobre-eyebrow">— Minha história</p>
+          <p class="sobre-p">
+            Comecei do zero — sem estrutura, sem academia de ponta, apenas com <strong>fome de evoluir.</strong> Aprendi
+            na prática que o corpo é a consequência da mente, e que o método certo transforma qualquer pessoa.
+          </p>
+          <p class="sobre-p">
+            Hoje sou <strong>Personal Trainer certificado e modelo </strong> com mais de 5 anos na
+            área. Treinei centenas de alunos com objetivos distintos — do iniciante ao atleta competitivo.
+          </p>
+          <p class="sobre-p">
+            Minha abordagem une <strong>ciência do esporte, periodização inteligente</strong> e acompanhamento próximo.
+            Não vendo sonhos. Entrego resultados.
+          </p>
+
+          <!-- Especialidades -->
+         
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ANTES E DEPOIS
+  ============================================================ -->
+<section class="transformacoes" id="transformacoes">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Transformações</div>
+      <h2 class="section-title">Resultados <em>reais.</em><br>Histórias reais.</h2>
+    </div>
+
+    <div class="transf-grid">
+      <div class="transf-card reveal" style="--delay: 0s">
+        <div class="transf-photos">
+          <div class="transf-photo">
+            <img src="assets/antes1.jpeg" alt="">
+           
+          </div>
+          <div class="transf-photo">
+            <img src="assets/depois1.jpeg" alt="">
+            
+          </div>
+        </div>
+        <div class="transf-arrow">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+
+      <div class="transf-card reveal" style="--delay: 0.15s">
+        <div class="transf-photos">
+          <div class="transf-photo">
+            <img src="assets/antes2.png" alt="">
+            <div class="transf-label">ANTES</div>
+          </div>
+          <div class="transf-photo">
+            <img src="assets/depois2.png" alt="">
+            <div class="transf-label ">DEPOIS</div>
+          </div>
+        </div>
+        <div class="transf-arrow">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+
+      <div class="transf-card reveal" style="--delay: 0.3s">
+        <div class="transf-photos">
+          <div class="transf-photo">
+            <img src="assets/antes4.jpeg" alt="">
+            <div class="transf-label">ANTES</div>
+          </div>
+          <div class="transf-photo">
+            <img src="assets/depois3.jpeg" alt="">
+            <div class="transf-label">DEPOIS</div>
+          </div>
+        </div>
+        <div class="transf-arrow">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- ============================================================
+       CTA FINAL / CONTATO
+  ============================================================ -->
+  <section class="cta-final" id="contato">
+    <div class="cta-bg">
+      <div class="cta-glow"></div>
+    </div>
+    <div class="container">
+      <div class="cta-content reveal">
+       
+        <h2 class="cta-title">Pronto para sua<br><em>evolução?</em></h2>
+        <p class="cta-sub">Vagas limitadas. O próximo passo é seu. Não espere a motivação perfeita — construa a
+          disciplina que te leva lá.</p>
+        <div class="cta-btns">
+          <a href="https://wa.me/5511999999999" target="_blank" class="btn btn-primary btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            Falar no WhatsApp
+          </a>
+          <a href="mailto:contato@jefersonrafael.com" class="btn btn-outline btn-lg">Enviar E-mail</a>
+        </div>
+        <p class="cta-note"> Resposta em até 24h · Sem compromisso</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo">JEFERSON <span>RAFAEL</span></a>
+          <p>Personal Trainer · Modelo · Atleta </p>
+        </div>
+        <nav class="footer-nav">
+          <a href="#sobre">Sobre</a>
+          <a href="#cupons">Cupons</a>
+          <a href="#transformacoes">Transformações</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Jeferson Rafael. Feito com  muito treino.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       BOTÃO WHATSAPP FLUTUANTE
+  ============================================================ -->
+  <a href="https://wa.me/5511999999999" target="_blank" class="whatsapp-float" id="whatsappBtn" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+    <span class="whatsapp-tooltip">Falar com Jeferson</span>
+  </a>
+
+  <!-- Toast de copiado -->
+  <div class="toast" id="toast">Código copiado! ✓</div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
