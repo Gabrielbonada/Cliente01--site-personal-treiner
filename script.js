@@ -341,6 +341,63 @@ function showToast(msg) {
   });
   imgs.forEach(img => io.observe(img));
 })();
+/* ============================================================
+   MODAL CASAL — abre automático ao entrar no site
+============================================================ */
+(function initModalCasal() {
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('modalCasal').classList.add('active');
+    }, 800);
+  });
+})();
+/* ============================================================
+   CARROSSEL DE ACADEMIAS
+============================================================ */
+(function initCarrosselAcademias() {
+  const estados = {};
+
+  function setup(id, total) {
+    estados[id] = { atual: 0, total };
+  }
+
+  setup('bigboy', 3);
+  setup('xteam', 3);
+
+  window.moverCarrossel = function(id, direcao) {
+    const e = estados[id];
+    e.atual = (e.atual + direcao + e.total) % e.total;
+    atualizar(id);
+  };
+
+  window.irParaSlide = function(id, index) {
+    estados[id].atual = index;
+    atualizar(id);
+  };
+
+  function atualizar(id) {
+    const { atual, total } = estados[id];
+    const track   = document.getElementById('track-' + id);
+    const dots    = document.querySelectorAll('#dots-' + id + ' .cdot');
+    const counter = document.getElementById('counter-' + id);
+
+    if (track)   track.style.transform = `translateX(-${atual * 100}%)`;
+    if (counter) counter.textContent = `${atual + 1} / ${total}`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === atual));
+  }
+
+  // Swipe touch
+  document.querySelectorAll('.academia-carrossel').forEach(el => {
+    const id = el.dataset.carrossel;
+    let startX = 0;
+
+    el.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    el.addEventListener('touchend', e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) moverCarrossel(id, diff > 0 ? 1 : -1);
+    }, { passive: true });
+  });
+})();
 
 /* ============================================================
    LOG
