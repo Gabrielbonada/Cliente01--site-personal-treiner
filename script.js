@@ -341,16 +341,7 @@ function showToast(msg) {
   });
   imgs.forEach(img => io.observe(img));
 })();
-/* ============================================================
-   MODAL CASAL — abre automático ao entrar no site
-============================================================ */
-(function initModalCasal() {
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('modalCasal').classList.add('active');
-    }, 800);
-  });
-})();
+
 /* ============================================================
    CARROSSEL DE ACADEMIAS
 ============================================================ */
@@ -362,7 +353,7 @@ function showToast(msg) {
   }
 
   setup('bigboy', 3);
-  setup('xteam', 3);
+  setup('xteam', 4);
 
   window.moverCarrossel = function(id, direcao) {
     const e = estados[id];

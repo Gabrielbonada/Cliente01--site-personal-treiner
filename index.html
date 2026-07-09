@@ -437,7 +437,7 @@
     <div class="container">
       <div class="section-header reveal">
         <div class="section-tag">Onde treinar</div>
-        <h2 class="section-title">Academias que dou os <em> treinos</em></h2>
+        <h2 class="section-title">Academias onde ofereço<em>atendimento particular</em></h2>
         <p class="section-sub">Estrutura de ponta para potencializar cada treino.</p>
       </div>
 
@@ -506,9 +506,10 @@
           <!-- Carrossel X-Team -->
           <div class="academia-carrossel" data-carrossel="xteam">
             <div class="carrossel-track" id="track-xteam">
-              <div class="carrossel-slide"><img src="assets/xteam1.jpg" alt="X-Team Academia"></div>
-              <div class="carrossel-slide"><img src="assets/xteam2.jpg" alt="X-Team Academia"></div>
-              <div class="carrossel-slide"><img src="assets/xteam3.jpg" alt="X-Team Academia"></div>
+              <div class="carrossel-slide"><img src="x-team1.jpeg" alt="X-Team Academia"></div>
+              <div class="carrossel-slide"><img src="x-team2.jpeg" alt="X-Team Academia"></div>
+              <div class="carrossel-slide"><img src="x-team3.jpeg" alt="X-Team Academia"></div>
+               <div class="carrossel-slide"><img src="x-team4.jpeg" alt="X-Team Academia"></div>
             </div>
             <button class="carrossel-btn carrossel-prev" onclick="moverCarrossel('xteam', -1)" aria-label="Anterior">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -524,8 +525,9 @@
               <span class="cdot active" onclick="irParaSlide('xteam', 0)"></span>
               <span class="cdot" onclick="irParaSlide('xteam', 1)"></span>
               <span class="cdot" onclick="irParaSlide('xteam', 2)"></span>
+              <span class="cdot" onclick="irParaSlide('xteam', 3)"></span>
             </div>
-            <div class="carrossel-counter" id="counter-xteam">1 / 3</div>
+            <div class="carrossel-counter" id="counter-xteam">1 / 4</div>
           </div>
         </div>
 
@@ -601,66 +603,7 @@
   <!-- Toast de copiado -->
   <div class="toast" id="toast">Código copiado! ✓</div>
   <!-- MODAL CASAL -->
-  <div class="modal-overlay" id="modalCasal">
-    <div class="modal-casal">
-      <div class="modal-header">
-        <div>
-
-          <div class="modal-title-casal">Casal que<br>treina <em>junto.</em></div>
-        </div>
-        <button class="modal-close"
-          onclick="document.getElementById('modalCasal').classList.remove('active')">✕</button>
-      </div>
-      <p class="modal-sub">Bota o shape junto. Evolução a dois, método do Jeferson Rafael.</p>
-      <div class="modal-cards-grid">
-        <div class="plan-card">
-
-          <div class="plan-name">Plano<br>Mensal Casal</div>
-          <div class="plan-divider"></div>
-          <div class="plan-price-old">De R$ 360</div>
-          <div class="plan-price-new"><span class="plan-currency">R$</span><span class="plan-value">300</span></div>
-          <div class="plan-period">/mês · por casal</div>
-          <div class="plan-savings">Economia de R$ 60</div>
-          <ul class="plan-features">
-            <li>Treino personalizado para os dois</li>
-            <li>Acompanhamento mensal</li>
-            <li>Suporte via WhatsApp</li>
-            <li>Periodização individual</li>
-          </ul>
-          <a href="https://wa.me/555192147753?text=Olá%20Jeferson!%20Tenho%20interesse%20no%20Plano%20Mensal%20Casal."
-            target="_blank" class="plan-cta"><span>Quero esse plano</span><svg width="13" height="13"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg></a>
-        </div>
-        <div class="plan-card plan-featured">
-
-          <div class="plan-name">Plano<br>Trimestral Casal</div>
-          <div class="plan-divider"></div>
-          <div class="plan-price-old">De R$ 1.000</div>
-          <div class="plan-price-new"><span class="plan-currency">R$</span><span class="plan-value">850</span></div>
-          <div class="plan-period">/3 meses · por casal</div>
-          <div class="plan-savings">Economia de R$ 150</div>
-          <ul class="plan-features">
-            <li>Treino personalizado para os dois</li>
-            <li>Acompanhamento trimestral</li>
-            <li>Suporte via WhatsApp</li>
-            <li>Periodização individual</li>
-
-          </ul>
-          <a href="https://wa.me/555192147753?text=Olá%20Jeferson!%20Tenho%20interesse%20no%20Plano%20Trimestral%20Casal."
-            target="_blank" class="plan-cta"><span>Quero esse plano</span><svg width="13" height="13"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg></a>
-        </div>
-      </div>
-      <div class="modal-note">
-
-
-      </div>
-    </div>
-  </div>
+ 
 
   <script src="script.js"></script>
 </body>
