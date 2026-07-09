@@ -335,15 +335,11 @@ ul {
   position: absolute;
   bottom: -10%;
   right: 6%;
-  /* sai do centro, vai pro canto */
   left: auto;
-  /* remove o left: 50% */
   transform: rotate(-8deg);
-  /* leve inclinação */
   width: 60vw;
   max-width: 500px;
   opacity: 0.09;
-  /* bem mais sutil */
   mix-blend-mode: screen;
 }
 
@@ -939,8 +935,6 @@ section {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-
-
 }
 
 .cupon-card {
@@ -1388,7 +1382,6 @@ section {
 }
 
 .depo-author span {
- 
   color: var(--text-muted);
   font-weight: 300;
 }
@@ -1538,7 +1531,6 @@ section {
 }
 
 .footer-bottom p {
-
   color: var(--text-dim);
   font-weight: 300;
 }
@@ -1664,8 +1656,6 @@ section {
   .depo-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-
 }
 
 @media (max-width: 768px) {
@@ -1678,7 +1668,6 @@ section {
   .sobre-grid {
     grid-template-columns: 360px 1fr;
   }
-
 
   .sobre-photo {
     margin: 0;
@@ -1830,14 +1819,14 @@ section {
 .modal-casal {
   background: var(--dark);
   border: 1px solid var(--border-bright);
-  width: 100%;           /* era 150% — esse era o problema principal */
+  width: 100%;
   max-width: 620px;
   position: relative;
   overflow: hidden;
   transform: translateY(24px) scale(0.97);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  max-height: 90vh;      /* novo — impede o modal de sair da tela */
-  overflow-y: auto;      /* novo — permite scroll se o conteúdo for longo */
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .modal-overlay.active .modal-casal {
@@ -1987,8 +1976,6 @@ section {
   transform: scaleX(1);
 }
 
-
-
 .plan-name {
   font-family: var(--ff-display);
   font-size: 1.35rem;
@@ -2067,7 +2054,6 @@ section {
 
 .plan-features li {
   font-family: var(--ff-cond);
-  
   color: var(--text-muted);
   letter-spacing: 0.05em;
   display: flex;
@@ -2170,6 +2156,7 @@ section {
   text-transform: uppercase;
   color: var(--text-dim);
 }
+
 /* ============================================================
    ACADEMIAS
 ============================================================ */
@@ -2297,18 +2284,48 @@ section {
   z-index: 1;
 }
 
-/* Carrossel */
+/* ============================================================
+   CARROSSEL DE ACADEMIAS — v2
+   (mais alto no mobile pra não cortar as fotos, setas discretas
+   que só aparecem no hover no desktop, dots em barra com glow,
+   gradiente pra legibilidade dos controles)
+============================================================ */
 .academia-carrossel {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 16/9;
+  aspect-ratio: 4/5;
   background: var(--dark3);
+  border-radius: var(--radius);
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.academia-carrossel:active {
+  cursor: grabbing;
+}
+
+.academia-carrossel:focus-visible {
+  outline: 2px solid var(--red-bright);
+  outline-offset: -2px;
+}
+
+/* gradiente pra dar contraste aos controles, em cima e embaixo */
+.academia-carrossel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 35%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 0%, transparent 30%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .carrossel-track {
   display: flex;
   height: 100%;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .carrossel-slide {
@@ -2321,7 +2338,11 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 30%;
   transition: transform 0.6s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 
 .academia-carrossel:hover .carrossel-slide img {
@@ -2332,68 +2353,107 @@ section {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(5, 5, 5, 0.75);
+  background: rgba(5, 5, 5, 0.55);
   border: 1px solid var(--border);
   color: var(--text);
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all var(--transition);
-  z-index: 2;
-  backdrop-filter: blur(6px);
+  z-index: 3;
+  backdrop-filter: blur(8px);
 }
 
 .carrossel-btn:hover {
   background: var(--red-bright);
   border-color: var(--red-bright);
+  box-shadow: 0 0 24px rgba(231, 76, 60, 0.45);
 }
 
-.carrossel-prev { left: 14px; }
-.carrossel-next { right: 14px; }
+.carrossel-prev { left: 12px; }
+.carrossel-next { right: 12px; }
 
 .carrossel-dots {
   position: absolute;
-  bottom: 14px;
+  bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   gap: 6px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .cdot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.3);
+  width: 18px;
+  height: 3px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.3);
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .cdot.active {
   background: var(--red-bright);
-  transform: scale(1.3);
+  width: 28px;
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.6);
 }
 
 .carrossel-counter {
   position: absolute;
   top: 14px;
   right: 14px;
-  background: rgba(5, 5, 5, 0.75);
-  backdrop-filter: blur(6px);
+  background: rgba(5, 5, 5, 0.55);
+  backdrop-filter: blur(8px);
   border: 1px solid var(--border);
   font-family: var(--ff-cond);
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   color: var(--text-muted);
   padding: 5px 10px;
-  z-index: 2;
+  border-radius: 20px;
+  z-index: 3;
 }
 
-/* Responsivo */
+.carrossel-counter strong {
+  color: var(--red-bright);
+  font-weight: 700;
+}
+
+/* Tablet */
+@media (min-width: 600px) and (max-width: 899px) {
+  .academia-carrossel {
+    aspect-ratio: 4/3;
+  }
+}
+
+/* Desktop: carrossel mais largo, setas escondidas até o hover */
+@media (min-width: 900px) {
+  .academia-carrossel {
+    aspect-ratio: 16/10;
+    cursor: default;
+  }
+
+  .carrossel-btn {
+    width: 46px;
+    height: 46px;
+    opacity: 0;
+    transform: translateY(-50%) scale(0.85);
+  }
+
+  .academia-carrossel:hover .carrossel-btn {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+
+  .carrossel-prev { left: 16px; }
+  .carrossel-next { right: 16px; }
+}
+
+/* Responsivo (geral da seção academias) */
 @media (min-width: 900px) {
   .academias-grid {
     grid-template-columns: 1fr 1fr;
@@ -2402,10 +2462,6 @@ section {
   .academia-card {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
-  }
-
-  .academia-carrossel {
-    aspect-ratio: 4/3;
   }
 }
 
@@ -2431,32 +2487,6 @@ section {
   .modal-cards-grid {
     margin: 20px 20px 0;
     grid-template-columns: 1fr;
-  }
-
-  .modal-note {
-    padding: 16px 20px 24px;
-  }
-
-  .plan-card {
-    padding: 22px 18px;
-  }
-
-  .plan-value {
-    font-size: 2.2rem;
-  }
-}
-@media (max-width: 500px) {
-  .modal-header {
-    padding: 24px 20px 0;
-  }
-
-  .modal-sub {
-    padding: 10px 20px 0;
-  }
-
-  .modal-cards-grid {
-    margin: 20px 20px 0;
-    grid-template-columns: 1fr;   /* empilha os cards em coluna única */
   }
 
   .modal-note {

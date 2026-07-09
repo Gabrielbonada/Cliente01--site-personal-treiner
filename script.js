@@ -343,7 +343,9 @@ function showToast(msg) {
 })();
 
 /* ============================================================
-   CARROSSEL DE ACADEMIAS
+   CARROSSEL DE ACADEMIAS — v2
+   Navegação por clique, arraste (mouse OU touch via Pointer Events)
+   e teclado (setas ← →)
 ============================================================ */
 (function initCarrosselAcademias() {
   const estados = {};
@@ -373,20 +375,40 @@ function showToast(msg) {
     const counter = document.getElementById('counter-' + id);
 
     if (track)   track.style.transform = `translateX(-${atual * 100}%)`;
-    if (counter) counter.textContent = `${atual + 1} / ${total}`;
+    if (counter) counter.innerHTML = `<strong>${atual + 1}</strong> / ${total}`;
     dots.forEach((d, i) => d.classList.toggle('active', i === atual));
   }
 
-  // Swipe touch
+  // Arrastar com o dedo (touch) OU com o mouse (desktop) — tudo via Pointer Events
   document.querySelectorAll('.academia-carrossel').forEach(el => {
     const id = el.dataset.carrossel;
     let startX = 0;
+    let dragging = false;
+    const DRAG_THRESHOLD = 40;
 
-    el.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-    el.addEventListener('touchend', e => {
-      const diff = startX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) moverCarrossel(id, diff > 0 ? 1 : -1);
-    }, { passive: true });
+    el.addEventListener('pointerdown', (e) => {
+      dragging = true;
+      startX = e.clientX;
+      el.setPointerCapture(e.pointerId);
+    });
+
+    el.addEventListener('pointerup', (e) => {
+      if (!dragging) return;
+      dragging = false;
+      const diff = startX - e.clientX;
+      if (Math.abs(diff) > DRAG_THRESHOLD) {
+        moverCarrossel(id, diff > 0 ? 1 : -1);
+      }
+    });
+
+    el.addEventListener('pointercancel', () => { dragging = false; });
+
+    // Navegação por teclado quando o carrossel está focado
+    el.setAttribute('tabindex', '0');
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); moverCarrossel(id, 1); }
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); moverCarrossel(id, -1); }
+    });
   });
 })();
 
